@@ -1,5 +1,7 @@
+import style from '../config/view.json' with { type: 'json' }; 
 export default class CalculatorView {
-    getHtml(res, isError){
-        return `<label style="font-size:40px; display:block; text-align:center; color:${isError ? 'red':'green'}">${res}</label>`
+    getHtml(res, isError) {
+        const textColor = isError ? style.textColorError : style.textColorResult;
+        return `<label style="font-size:${style.fontSize}; display:block; text-align:${style.textAlign}; color:${textColor}">${res}</label>`
     }
 }
